@@ -88,47 +88,71 @@ app.post('/create-user', function (req, res)
 {
    var username = req.body.username;
    var password = req.body.password;
-       var salt = crypto.randomBytes(128).toString('hex');
-   var dbString = hash(password, salt);
-   pool.query('INSERT INTO "user" (username, password) VALUES ($1, $2)', [username, dbString], function (err, result)
+   if(!username.trim() || !password.trim())
    {
-      if (err)
-      {
-          res.status(500).send(err.toString());
-      }
-      else
-      {
-          res.send('User successfully created: ' + username);
-      }
-   });
+      res.status(400).send('Username or password field blank.');
+   }
+   else
+   {
+       var salt = crypto.randomBytes(128).toString('hex');
+        var dbString = hash(password, salt);
+        pool.query('INSERT INTO "user" (username, password) VALUES ($1, $2)', [username, dbString], function (err, result)
+        {
+            if (err)
+            {
+                res.status(500).send(err.toString());
+            }
+            else
+            {
+                res.send('User successfully created: ' + username);
+            }
+        });
+   }
 });
 
-app.post('/login', function (req, res) {
+app.post('/login', function (req, res) 
+{
    var username = req.body.username;
    var password = req.body.password;
-   
-   pool.query('SELECT * FROM "user" WHERE username = $1', [username], function (err, result) {
-      if (err) {
-          res.status(500).send(err.toString());
-      } else {
-          if (result.rows.length === 0) {
-              res.status(403).send('username/password is invalid');
-          } else {
-              var dbString = result.rows[0].password;
-              var salt = dbString.split('$')[2];
-              var hashedPassword = hash(password, salt);
-              if (hashedPassword === dbString) {
+   if(!username.trim() || !password.trim())
+   {
+     res.status(400).send('Username or password field blank.'); 
+   }
+   else
+   {
+        pool.query('SELECT * FROM "user" WHERE username = $1', [username], function (err, result)
+        {
+            if (err) 
+            {
+            res.status(500).send(err.toString());
+            } 
+            else
+            {
+                if (result.rows.length === 0)
+                {
+                    res.status(403).send('username/password is invalid');
+                }
+                else
+                {
+                    var dbString = result.rows[0].password;
+                    var salt = dbString.split('$')[2];
+                    var hashedPassword = hash(password, salt);
+                    if (hashedPassword === dbString)
+                    {
                 
-                req.session.auth = {userId: result.rows[0].id};
+                        req.session.auth = {userId: result.rows[0].id};
                 
-                res.send('credentials correct!');
+                        res.send('credentials correct!');
                 
-              } else {
-                res.status(403).send('username/password is invalid');
-              }
-          }
-      }
-   });
+                    }
+                    else
+                    {
+                        res.status(403).send('username/password is invalid');
+                    }
+                }
+            }
+        });
+    }
 });
 
 app.get('/check-login', function (req, res) {
