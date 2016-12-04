@@ -2,13 +2,44 @@
 <html>
     <head>
         
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial scale=1.0">
         <link href="ui/style.css" rel="stylesheet">
-       
+        <link href="ui/css/bootstrap.min.css" rel="stylesheet">
         
     </head>
     <body>
-        
-        
+        <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+        <div class="container-fluid">
+		<div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-blog-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+            <a class="navbar-brand" href="#">My Blog</a>
+			</div>
+            <div class="collapse navbar-collapse navbar-right" id="bs-blog-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html">About</a></li>
+					<li class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">More details<b class="caret"></b></a>
+					<ul class="dropdown-menu">
+					<li><a href="#">Info1</a></li>
+					<li><a href="#">Info2</a></li>
+					<li><a href="#">Info3</a></li>
+					<li class="divider"></li>
+					<li><a href="#">Separated Link</a></li>
+					<li class="divider"></li>
+					<li><a href="#">One more separated link</a></li>
+					</ul>
+					</li>
+                    </ul>
+                </div>
+            </div>
+        </nav>  
         <div class="container">
         <div class="center">
         <img id = 'madi' src="https://pbs.twimg.com/profile_images/797151920590831617/xVgSH1HQ_400x400.jpg" class="img-medium"/>
@@ -81,6 +112,8 @@
            </div>
         </div>
         
+         <script src="js/jquery-3.1.1.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
         <script type="text/javascript" src="/ui/main.js">
         </script>
     </body>
