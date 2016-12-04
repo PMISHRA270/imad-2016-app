@@ -2,9 +2,54 @@
 <html>
     <head>
         <link href="/ui/style.css" rel="stylesheet">
+         <link href="/ui/css/bootstrap.css" rel="stylesheet">
         
     </head>
     <body>
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+		<a class="navbar-brand" href="#">My Blog</a>
+		</div>
+		<div id="navbar" class="navbar-collapse collapse">
+			<ul class="nav navbar-nav navbar-right">
+				<li id="new_article" style="display:none;"><a href="#" data-toggle="modal" data-target="#article-modal">New Article</a></li>
+				
+				<li class="dropdown">
+		          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Theme
+        		  <span class="caret"></span></a>
+		          <ul id="themeMenu" class="dropdown-menu">
+        		    <li><a href="#"><i class="fa fa-check"></i>Default</a></li>
+		            <li><a href="#"><i class="fa fa-check"></i>Flatly</a></li>
+        		    <li><a href="#"><i class="fa fa-check"></i>Amelia</a></li> 
+        		    <li><a href="#"><i class="fa fa-check"></i>Slate</a></li> 
+        		    <li><a href="#"><i class="fa fa-check"></i>United</a></li> 
+		          </ul>
+        		</li>
+				
+				<li id="login"><a href="#" data-toggle="modal" data-target="#login-modal"><span style="margin-right: 5px;" class="glyphicon glyphicon-log-in"></span>Login</a></li>
+				<!--li style="display:none" id="logout"><a href="#">Logout</a></li-->
+				<li style="display:none" id="li_logout" class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+					<!--img src="http://placehold.it/18x18" class="img-circle special-img"> <span id="uname">Username</span> <b class="caret"></b></a-->
+					
+        			<img class="round" width="25" height="25" id="usrimg" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAABQElEQVRIS2OU2jPnPwONAeOoJaSE8GhwkRJaDCQF1zpjbwZDfjGGqQ8uMvTcO0e0RURb4igsw9ChYc3AwsjE8PD7J4ags1upb0m7hhWDi4gcw+F3zxhcRWQZKm8cY9jy6j5RFhHlE25mVgZQUL34+Y1h9fPbDCALQRaALCIGEGVJvIwmQ4mSEcPMR1cYpjy4CLZQhI2TIeHiLoZ73z4RtIcoS6bqODDo8YoyxF/cCTa0SsWUIVpanaHr7lmGhU+uU26JEZ8ow3RdJwYZDh4Mw/a8ecwQf3EX5ZbkKOgzpMvpgJMssqsX6rsxaPAIMmRe3sdw7tNrvBYRDC5c4Q+yPFdBH2xx253T5FviKiLH0KNpy3Dk/VOG7CsHUAyCBePzn18ZAs5sId8SgoFNpAKCwUWkOaM+oUZAQcwYjROSwhIAMnygI1kXtRQAAAAASUVORK5CYII=" alt="Andy">  &nbsp;<span id="uname">Username</span> <b class="caret"></b></a>
+					<ul class="dropdown-menu">
+						<li><a href="#"><i class="fa fa-cog"></i> Account</a></li>
+						<li class="divider"></li>
+						<li id="logout"><a href="#">Logout</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</div>
+</nav>
         <div class="container">
         <div class="center">
         <img id = 'madi' src="https://pbs.twimg.com/profile_images/797151920590831617/xVgSH1HQ_400x400.jpg" class="img-medium"/>
