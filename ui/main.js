@@ -1,15 +1,15 @@
 function loadLoginForm () {
     var loginHtml = `
-        <div class="center" style="color:black">
+        
         <h2>Login/Register to get more access</h2>
-        </div>
-        <div class="center" style="color:black">
+        
+        
         <input type="text" id="username" placeholder="username" />
         <input type="password" id="password" placeholder="password" />
         <br/><br/>
         <input type="submit" id="login_btn" value="Login" />
         <input type="submit" id="register_btn" value="Register" />
-        </div>
+       
         `;
     document.getElementById('login_area').innerHTML = loginHtml;
     
