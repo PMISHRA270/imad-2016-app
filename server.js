@@ -75,31 +75,31 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-app.get('ui/css/bootstrap.min.css', function (req, res) { 
+app.get('/ui/css/bootstrap.min.css', function (req, res) { 
     res.sendFile(path.join(__dirname, 'ui/css', 'bootstrap.min.css'));
 });
 
-app.get('ui/style.css', function (req, res) {
+app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
 });
 
-app.get('ui/images/1.jpg', function (req, res) {
+app.get('/ui/images/1.jpg', function (req, res) {
   res.sendFile(path.join(__dirname,'ui/images', '1.jpg'));
 });
 
-app.get('ui/images/2.jpg', function (req, res) {
+app.get('/ui/images/2.jpg', function (req, res) {
   res.sendFile(path.join(__dirname,'ui/images', '2.jpg'));
 });
 
-app.get('ui/images/3.jpg', function (req, res) {
+app.get('/ui/images/3.jpg', function (req, res) {
   res.sendFile(path.join(__dirname,'ui/images', '3.jpg'));
 });
 
-app.get('ui/js/jquery-3.1.1.min.js', function (req, res) {
+app.get('/ui/js/jquery-3.1.1.min.js', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui/js', 'jquery-3.1.1.min.js'));
 });
 
-app.get('ui/js/bootstrap.min.js', function (req, res) {
+app.get('/ui/js/bootstrap.min.js', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui/js', 'bootstrap.min.js'));
 });
 
