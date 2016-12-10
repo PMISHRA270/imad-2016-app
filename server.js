@@ -15,8 +15,7 @@ var config={
 };
 
 var app = express();
-//app.use(morgan('combined'));
-console.log(process.env.DB_PASSWORD);
+app.use(morgan('combined'));
 app.use(bodyParser.json());
 app.use(session({
     secret: 'someRandomSecretValue',
